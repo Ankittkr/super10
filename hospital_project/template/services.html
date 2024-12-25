@@ -1,0 +1,151 @@
+{% extends "base.html" %}
+
+{%block title %}
+Services
+{%endblock%}
+
+{%block extra_styles %}
+main {
+    margin-left:30px;
+    max-width: 1200px;
+    background: white;
+    padding: 30px 40px;
+    border-radius: 12px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+}
+
+main h2 {
+    text-align: center;
+    color: #007bff;
+    font-size: 2.5em;
+    margin-bottom: 30px;
+}
+
+/* Service Section */
+.service {
+    background: #f9f9f9;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 30px;
+    align-items: center;
+    border-bottom: 2px solid #f1f1f1;
+    padding-bottom: 20px;
+    border-radius: 12px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Hover Effect */
+.service:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+}
+
+.service img {
+    width: 40%;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+}
+
+.service-details {
+    width: 55%;
+}
+
+.service-details h3 {
+    color: #007bff;
+    font-size: 1.8em;
+    margin-bottom: 15px;
+}
+
+.service-details p {
+    font-size: 1.1em;
+    color: #555;
+    line-height: 1.7;
+}
+
+.service-details a {
+    color: #007bff;
+    text-decoration: none;
+    font-weight: bold;
+    margin-top: 15px;
+    display: inline-block;
+    transition: color 0.3s ease;
+}
+
+.service-details a:hover {
+    color: #ffcc00;
+}
+.capsule-container {
+    margin: 20px auto;
+    padding: 10px 40px;
+    background: linear-gradient(90deg, #007bff, #257ae9);
+    color: white;
+    border-radius: 50px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    max-width: fit-content;
+}
+
+.capsule-container h1 {
+    font-size: 1.5em;
+    margin: 0;
+}
+{%endblock%}
+
+{%block body%}
+
+<div class="capsule-container">
+    <h1>Our Available Services</h1>
+</div>
+<main>
+    <!-- Service 1 -->
+    <section class="service">
+        <img src="\static\img\cardiovascular.jpg" alt="Cardiology Service">
+        <div class="service-details">
+            <h3>Cardiology</h3>
+            <p>
+                Our Cardiology Department provides comprehensive cardiovascular care, from prevention and diagnosis to treatment and management. We offer advanced diagnostic tools, including echocardiography and stress tests, to ensure optimal heart health for our patients.
+            </p>
+            <a href="/services/cardiology">Learn more &raquo;</a>
+        </div>
+    </section>
+
+    <!-- Service 2 -->
+    <section class="service">
+        <img src="\static\img\ortho.jpeg" alt="Orthopedics Service">
+        <div class="service-details">
+      ''      <h3>Orthopedics</h3>
+            <p>
+                The Orthopedics Department offers a wide range of services to treat bone, joint, and muscle disorders. From trauma and sports injuries to advanced joint replacement surgeries, our team of experts ensures that you return to a healthy, active lifestyle.
+            </p>
+            <a href="/services/orthopedics">Learn more &raquo;</a>
+        </div>
+    </section>
+
+    <!-- Service 3 -->
+    <section class="service">
+        <img src="\static\img\Pediatrics.jpeg" alt="Pediatrics Service">
+        <div class="service-details">
+            <h3>Pediatrics</h3>
+            <p>
+                Our Pediatric Department is dedicated to the health and well-being of children. We offer a full range of medical services, including immunizations, wellness checks, and the treatment of common childhood illnesses in a caring and compassionate environment.
+            </p>
+            <a href="/services/pediatrics">Learn more &raquo;</a>
+        </div>
+    </section>
+
+    <!-- Service 4 -->
+    <section class="service">
+        <img src="\static\img\neuro.jpeg" alt="Neurology Service">
+        <div class="service-details">
+            <h3>Neurology</h3>
+            <p>
+                Our Neurology Department provides expert care for conditions affecting the brain, spine, and nervous system. We specialize in the diagnosis and treatment of disorders such as epilepsy, stroke, multiple sclerosis, and Parkinson's disease.
+            </p>
+            <a href="/services/neurology">Learn more &raquo;</a>
+        </div>
+    </section>
+
+</main>
+
+{%endblock%}

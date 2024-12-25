@@ -1,0 +1,131 @@
+{% extends "base.html "%}
+
+{% block title%}Appointment{%endblock%}
+{%block extra_styles%}
+        main {
+            max-width: 800px;
+            margin: 20px auto;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+
+        }
+        h1{
+            text-align: center;
+            color: #ffffff;
+            margin-left: 15%;
+        }
+        h2{
+            text-align: center;
+            color: #007bff;
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+        label {
+            font-weight: bold;
+        }
+        input, select, button {
+            padding: 10px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            width: 100%;
+        }
+        button {
+            background: #007bff;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        button:hover {
+            background: #0056b3;
+        }
+        .capsule-container {
+            margin: 20px auto;
+            padding: 10px 40px;
+            background: linear-gradient(90deg, #007bff, #257ae9);
+            color: white;
+            border-radius: 50px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            max-width: fit-content;
+        }
+        
+        .capsule-container h1 {
+            font-size: 1.5em;
+            margin: 0;
+        }
+{%endblock%}   
+
+{%block body%}
+<div class="capsule-container">
+    <h1>Appointment Booking</h1>
+</div>
+    <main>
+        <section>
+            <h2>Appointment Details</h2>
+            <form id="appointmentForm">
+                <label for="name">Full Name</label>
+                <input type="text" id="name" name="name" placeholder="Enter your full name" required>
+
+                <label for="email">Email Address</label>
+                <input type="email" id="email" name="email" placeholder="Enter your email" required>
+
+                <label for="doctor">Select Doctor</label>
+                <select id="doctor" name="doctor" required>
+                    <option value="">--Choose a Doctor--</option>
+                    <option value="Dr. John Doe" data-amount="100">Dr. John Doe - Cardiologist ($100)</option>
+                    <option value="Dr. Sarah Smith" data-amount="150">Dr. Sarah Smith - Neurologist ($150)</option>
+                    <option value="Dr. Emily Johnson" data-amount="120">Dr. Emily Johnson - Pediatrician ($120)</option>
+                </select>
+
+                <label for="date">Preferred Date</label>
+                <input type="date" id="date" name="date" required>
+
+                <label for="time">Preferred Time</label>
+                <input type="time" id="time" name="time" required>
+                
+                <h2>Payment Options</h2>
+                <label for="payment-method">Choose Payment Method</label>
+                <select id="payment-method" name="payment-method" required>
+                    <option value="">--Select Payment Method--</option>
+                    <option value="credit-card">Credit Card</option>
+                    <option value="debit-card">Debit Card</option>
+                    <option value="upi">UPI</option>
+                    <option value="net-banking">Net Banking</option>
+                </select>
+
+                <label for="amount">Amount</label>
+                <input type="text" id="amount" name="amount" value="$0" readonly>
+                
+                <button type="submit">Book Appointment</button>
+            </form>
+        </section>
+    </main>
+{%endblock%}
+
+{% block scripts %}
+<script>
+    // Get references to the select element and amount input
+    const doctorSelect = document.getElementById('doctor');
+    const amountInput = document.getElementById('amount');
+
+    // Update the amount field dynamically based on the selected doctor
+    doctorSelect.addEventListener('change', function () {
+        const selectedOption = doctorSelect.options[doctorSelect.selectedIndex];
+        const amount = selectedOption.getAttribute('data-amount');
+        amountInput.value = amount ? `$${amount}` : '$0';
+    });
+
+    // Handle form submission
+    document.getElementById('appointmentForm').addEventListener('submit', function(event) {
+        event.preventDefault(); // Prevent the default form submission
+        alert('Your appointment has been successfully booked!');
+    });
+</script>
+{% endblock %}
+

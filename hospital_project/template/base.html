@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Welcome to Blue Heart Hospital. Exceptional care with state-of-the-art facilities.">
+    <meta name="keywords" content="hospital, healthcare, doctors, appointments, careers">
+    <meta name="author" content="Blue Heart Hospital">
+    <title>{% block title %}{% endblock %} | Blue Heart</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+        /* General Reset */
+        body, html {
+            margin: 0;
+            padding: 0;
+            font-family: 'Arial', sans-serif;
+            box-sizing: border-box;
+            background: #f4f4f4;
+        }
+        
+        /* Navbar Styling */
+        .navbar {
+            background-color: #007bff;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            position: fixed;
+            top: 0;
+            width: 98%;
+            z-index: 1000;
+        }
+        .navbar .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #fff;
+        }
+        .navbar nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 10px;
+            font-size: 1rem;
+            transition: color 0.3s;
+        }
+        .navbar nav a:hover {
+            color: #ffcc00;
+        }
+
+        /* Body Padding to Avoid Navbar Overlap */
+        body {
+            padding-top: 60px;
+        }
+
+        /* Footer Styling */
+        .footer {
+            background-color: #007bff;
+            color: #ffffff;
+            padding: 20px 0;
+            text-align: center;
+        }
+        .footer a {
+            color: #ffffff;
+            text-decoration: none;
+        }
+        .footer a:hover {
+            text-decoration: underline;
+        }
+        .footer .social-icons a {
+            margin: 0 10px;
+            font-size: 1.5rem;
+            color: #ffffff;
+        }
+        .footer .social-icons a:hover {
+            color: #ffcc00;
+        }
+
+        /* Blocks for Specific Page Content */
+        {% block extra_styles %}{% endblock %}
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <header>
+        <div class="navbar">
+            <div class="logo">Blue Heart Hospital</div>
+            <nav>
+                <a href="/">Home</a>
+                <a href="/aboutus">About Us</a>
+                <a href="/services">Services</a>
+                <a href="/doctors">Doctors</a>
+                <a href="/careers">Careers</a>
+                <a href="/contact">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    {% block body %}{% endblock %}
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>&copy; 2024 Blue Heart Hospital. All rights reserved.</p>
+        <p>Contact us: <a href="mailto:info@hospital.com">info@hospital.com</a></p>
+        <div class="social-icons">
+            <a href="#" class="fab fa-facebook"></a>
+            <a href="#" class="fab fa-twitter"></a>
+            <a href="#" class="fab fa-instagram"></a>
+            <a href="#" class="fab fa-linkedin"></a>
+        </div>
+    </footer>
+
+    {% block scripts %}{% endblock %}
+</body>
+</html>

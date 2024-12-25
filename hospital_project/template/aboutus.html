@@ -1,0 +1,167 @@
+{% extends "base.html" %}
+
+{%block title %}
+About us
+{%endblock%}
+
+{%block extra_styles %}
+/* Main Content */
+main {
+    margin-left:30px;
+    max-width: 1200px;
+    background: white;
+    padding: 30px 40px;
+    border-radius: 12px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+}
+
+        main h2 {
+            text-align: center;
+            color: #007bff;
+            font-size: 2.5em;
+            margin-bottom: 20px;
+        }
+
+        /* About Section */
+        .about-section {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 20px;
+        }
+
+        .about-section img {
+            width: 50%;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+        }
+
+        .about-section p {
+            width: 50%;
+            font-size: 1.1em;
+            color: #555;
+            line-height: 1.8;
+        }
+
+        .mission, .vision, .values {
+            background-color: #f4f4f4;
+            padding: 25px;
+            margin-bottom: 30px;
+            border-radius: 10px;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .mission:hover, .vision:hover, .values:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        .mission h3, .vision h3, .values h3 {
+            font-size: 1.8em;
+            color: #007bff;
+            margin-bottom: 15px;
+        }
+
+        .values ul {
+            list-style-type: none;
+            padding-left: 0;
+        }
+
+        .values li {
+            font-size: 1.1em;
+            color: #444;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+        }
+
+        .values li:before {
+            content: '\2022';
+            color: #007bff;
+            font-size: 1.5em;
+            margin-right: 10px;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            background: #007bff;
+            color: #fff;
+            padding: 20px;
+            margin-top: 50px;
+            font-size: 1.1em;
+        }
+
+        /* Call-to-Action Buttons */
+        .cta-btn {
+            display: inline-block;
+            background: #007bff;
+            color: #fff;
+            padding: 10px 20px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: background 0.3s ease;
+        }
+
+        .cta-btn:hover {
+            background: #0056b3;
+        }
+        .capsule-container {
+            margin: 20px auto;
+            padding: 10px 40px;
+            background: linear-gradient(90deg, #007bff, #257ae9);
+            color: white;
+            border-radius: 50px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            max-width: fit-content;
+        }
+        
+        .capsule-container h1 {
+            font-size: 1.5em;
+            margin: 0;
+        }
+{%endblock%}
+
+{%block body%}
+<div class="capsule-container">
+    <h1>About our Hospital</h1>
+</div>
+<main>
+    <section class="about-section">
+        <h2>The Blue Heart Hospital</h2>
+        <p>
+            Established in 1985, Blue Heart Hospital has been at the forefront of medical care, offering world-class facilities and compassionate healthcare services to our community. Our team of highly skilled doctors, nurses, and staff work tirelessly to ensure that each patient receives personalized attention and the highest quality of care.
+        </p>
+        <img src="/static/img/hospital.jpg" alt="Hospital Building">
+    </section>
+<br>
+    <section class="mission">
+        <h3>Our Mission</h3>
+        <p>
+            To provide outstanding and compassionate healthcare services, ensuring the well-being of every patient we serve. Our mission is to continually improve our medical practices through innovation, education, and collaboration.
+        </p>
+    </section>
+
+    <section class="vision">
+        <h3>Our Vision</h3>
+        <p>
+            To be a leader in healthcare excellence and a trusted partner in promoting healthy and fulfilling lives in the communities we serve.
+        </p>
+    </section>
+
+    <section class="values">
+        <h3>Core Values</h3>
+        <ul>
+            <li>Compassion and respect for all.</li>
+            <li>Commitment to excellence in patient care.</li>
+            <li>Integrity and transparency in our services.</li>
+            <li>Continuous improvement through innovation.</li>
+        </ul>
+    </section>
+</main>
+
+
+{%endblock%}

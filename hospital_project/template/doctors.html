@@ -1,0 +1,145 @@
+{% extends "base.html"%}
+
+{%block title%}
+Doctors
+{% endblock %}
+
+{%block extra_styles%}
+.section {
+    background: white; /* White background for sections */
+    margin: 20px 60px; /* Margin between sections */
+    padding: 20px; /* Padding inside sections */
+    border-radius: 8px; /* Rounded corners */
+    border-top-left-radius: 70px; /* More pronounced curve on the top-right corner */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    transition: transform 0.3s, box-shadow 0.3s; /* Smooth transition for hover effects */
+    display: flex;
+    flex-wrap: wrap; /* Flexbox layout for content */
+    min-height: 300px; /* Make section longer */
+}
+
+.section:hover {
+    transform: translateY(-5px); /* Lift effect on hover */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Enhanced shadow on hover */
+}
+
+.section img {
+    border-radius: 50%; /* Circular image */
+    width: 250px; /* Set image size */
+    height: 250px; /* Ensure roundness */
+    object-fit: cover; /* Maintain aspect ratio */
+    margin: 10px auto; /* Center the image */
+    display: block;
+}
+
+.section .caption {
+    text-align: center; /* Center the caption */
+    font-size: 14px;
+    color: #555; /* Subtle color for captions */
+    margin-top: 5px;
+}
+
+.section .rhs {
+    display: flex;
+    flex-direction: column;
+    gap: 15px; /* Space between subsections */
+    margin-left: 50px; /* Push RHS content to the right */
+}
+
+.section .rhs .sub-section {
+    background: #f9f9f9; /* Light gray background for subsections */
+    padding: 10px;
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1); /* Slight shadow */
+    flex: 1; /* Equal size for all subsections */
+}
+
+h2 {
+    color: #007BFF; /* Blue color for section headings */
+}
+.capsule-container {
+    margin: 20px auto;
+    padding: 10px 40px;
+    background: linear-gradient(90deg, #007bff, #257ae9);
+    color: white;
+    border-radius: 50px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    max-width: fit-content;
+}
+
+.capsule-container h1 {
+    font-size: 1.5em;
+    margin: 0;
+}
+
+{%endblock %}
+
+{%block body%}
+<div class="capsule-container">
+    <h1>Meet Our Doctors</h1>
+</div>
+<div class="container">
+    <div class="section">
+        <!-- Left side: Image and caption -->
+        <div>
+            <img src="/static/img/doc1.jpg" alt="Round Image">
+            <div class="caption">Dr. Emily Carter</div>
+        </div>
+    
+        <!-- Right-hand side: Subsections -->
+        <div class="rhs">
+            <div class="sub-section">
+                <h3>Dr. Emily Carter</h3>
+                <p>Specialization: Cardiology (Heart disease, angioplasty, advanced heart failure)</p>
+                   <p>Education: MD from Harvard Medical School</p>
+                    <p>Experience: 15+ years; Senior Cardiologist at City General Hospital</p>
+                    <p>Achievements: Best Cardiologist Award (2020); research on lifestyle and heart health</p>
+                   <p>Future Goals: Advance non-invasive treatments, mentor young doctors</p>
+                    <p>Community Work: Free heart camps, awareness campaigns</p>
+            </div>
+        </div>
+    </div>
+    <div class="section">
+        <!-- Left side: Image and caption -->
+        <div>
+            <img src="/static/img/doc2.jpg" alt="Round Image">
+            <div class="caption">Dr. John Smith</div>
+        </div>
+    
+        <!-- Right-hand side: Subsections -->
+        <div class="rhs">
+            <div class="sub-section">
+                <h3> Dr. John Smith</h3>
+                <p>Specialization: Pediatrics (Child health, immunizations, developmental disorders)</p>
+                <p>Education: MD from Stanford University, Fellowship in Pediatric Endocrinology</p>
+                <p>Experience: 10+ years; Pediatric Consultant at Sunshine Children’s Hospital</p>
+                <p>Achievements: Published research on childhood obesity; Pediatrician of the Year (2019)</p>
+                <p>Community Work: Free health check-ups for underprivileged children, vaccination drives</p>
+                <p>Future Goals: Enhance awareness of pediatric health and train rural healthcare workers</p>
+            </div>
+        </div>
+    </div>
+    <div class="section">
+        <!-- Left side: Image and caption -->
+        <div>
+            <img src="/static/img/doc3.jpg" alt="Round Image">
+            <div class="caption">Dr. Priya Sharma</div>
+        </div>
+    
+        <!-- Right-hand side: Subsections -->
+        <div class="rhs">
+            <div class="sub-section">
+                <h3>Dr. Priya Sharma</h3>
+                <p>Specialization: Orthopedics (Joint replacement, sports injuries, spine surgeries)</p>
+                <p>Education: MBBS and MS (Orthopedics) from AIIMS Delhi</p>
+                <p>Experience: 12+ years; Head Orthopedic Surgeon at Global Care Hospital</p>
+                <p>Achievements: Pioneered minimally invasive spine surgery techniques; Best Orthopedic Specialist (2021)</p>
+                <p>Community Work: Organizes bone health workshops; volunteers for sports injury camps</p>
+                <p>Future Goals: Develop affordable orthopedic solutions and expand global collaborations</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+{%endblock %}
