@@ -73,7 +73,8 @@ footer.careers-footer {
 
     <section class="join-us">
         <h2>Join Us</h2>
-        <form class="application-form" , id="jobApplicationForm">
+        {% csrf_token %}
+                <form class="application-form" , id="jobApplicationForm" >
             <label for="name">Full Name</label>
             <input type="text" id="name" name="name" placeholder="Enter your name" required>
 

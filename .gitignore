@@ -9,5 +9,9 @@ hospital_project/hospital_project/__pycache__/
 hospital_project/services/__pycache__/
 hospital_project/hospital_project/__pycache__/
 hospital_project/events/migrations/__pycache__/
+hospital_project/careers/migrations/__pycache__/
+hospital_project/appointment/migrations/__pycache__/
+hospital_project/doctors/migrations/__pycache__/
+
 
 
