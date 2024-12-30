@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Styled Table Example</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 20px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        th, td {
+            padding: 12px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+        th {
+            background-color: #4CAF50;
+            color: white;
+        }
+        tr:hover {
+            background-color: #f1f1f1;
+        }
+        tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+        tr:nth-child(odd) {
+            background-color: #ffffff;
+        }
+    </style>
+</head>
+<body>
+    <h2>Careers Data Page</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Position Name</th>
+                <th>Hr Name</th>
+                <th>Opening Date</th>
+                <th>Closing Date</th>
+                <th>Notes</th>
+                <th>Status</th>
+                <th>Department</th>
+                <th>Base Salary</th>
+                <th>Hiring Manager</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% if cdata %}
+                {% for careers in cdata %}
+                <tr>
+                    <td>{{careers.id}}</td>
+                   <td>{{ careers.positionName }}</td> <!-- Add the correct field here -->
+                   <td>{{ careers.hrName }}</td> <!-- Add the correct field here -->
+                   <td>{{ careers.openingdate }}</td>
+                   <td>{{ careers.closeddate }}</td>
+                   <td>{{ careers.notes }}</td>
+                   <td>{{ careers.status }}</td>
+                   <td>{{ careers.deparment }}</td>
+                   <td>{{ careers.baseSalary }}</td>
+                   <td>{{ careers.hiringManager }}</td>
+                </tr>
+                {% endfor %}
+            {% else %}
+                <tr>
+                    <td colspan="9">No data found</td>
+                </tr>
+            {% endif %}
+        </tbody>
+    </table>
+</body>
+</html>
